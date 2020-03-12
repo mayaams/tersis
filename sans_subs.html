@@ -49,10 +49,10 @@
 
                 host = document.getElementById("host").value;
                 port = document.getElementById("port").value;
-               
+
                 document.getElementById("messages").innerHTML += '<span>Connecting to: ' + host + ' on port: ' + port + '</span><br/>';
                 document.getElementById("messages").innerHTML += '<span>Using the following client value: ' + clientID + '</span><br/>';
-                
+
 
                 // Initialize new Paho client connection
                 client = new Paho.MQTT.Client(host, Number(port), clientID);
@@ -91,7 +91,7 @@
             // Called when a message arrives
             function onMessageArrived(message) {
                 console.log("onMessageArrived: " + message.payloadString);
-                document.getElementById("messages").innerHTML += '<span>Topic: ' + message.destinationName + '  | ' + message.payloadString + '</span><br/>';
+                document.getElementById("messages").innerHTML += '<span>Data: ' + message.payloadString + '</span><br/>';
                 a = message.payloadString; //message yg ditarik
                 b = a.split("|"); // split
                 var data1 = parseFloat(b[0]); //convert to float
@@ -118,14 +118,15 @@
                 //     }
                 //   }
           //      document.getElementById("messages").innerHTML += 'nol ada berapa= '+dnol;
-                document.getElementById("messages").innerHTML += data1;
-                document.getElementById("messages").innerHTML += data2;
-                document.getElementById("messages").innerHTML += data3;
+          //      document.getElementById("messages").innerHTML += data1;
+            //    document.getElementById("messages").innerHTML += data2;
+              //  document.getElementById("messages").innerHTML += data3;
 
                 var jum = data1+data2+data3;
                 var rata = 0;
-                document.getElementById("messages").innerHTML += 'hasil= '+jum;
-           
+                document.getElementById("messages").innerHTML += '<pan>hasil= '+jum;
+                document.getElementById("messages").innerHTML += '<span>rata-rata= ';
+
             }
 
             // Called when the disconnection button is pressed

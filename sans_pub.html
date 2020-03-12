@@ -26,7 +26,7 @@
                 <div class="form-group row">
                     <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Port</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control form-control-sm"  id="mqtt_server" id="mqtt_port" value="8000">
+                      <input type="text" class="form-control form-control-sm" id="mqtt_port" value="8000">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -44,7 +44,7 @@
                 <div class="form-group row">
                     <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Sensor 2</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control form-control-sm" Sensor 2>
+                      <input type="text" class="form-control form-control-sm" id="mqtt_msg2" value="">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -54,16 +54,8 @@
                     </div>
                 </div>
               </form>
-            <!-- Hostname: <input type="text" id="mqtt_server" value="broker.hivemq.com"><br><br>
-            Port: <input type="text" id="mqtt_port" value="8000"><br><br>
-            Topic: <input type="text" id="mqtt_destname" value="suhuBDG"><br><br>
-            Sensor 1: <input type="text" id="mqtt_msg1" value=""><br><br>
-            Sensor 2: <input type="text" Sensor 2><br><br>
-            Sensor 3: <input type="text" id="mqtt_msg3" value=""><br><br> -->
-            <input type="button" class="btn btn-primary" id="publish_now" onclick="send_mqtt_msg()" value="Publish MQTT Message">
-            <!-- <input type="button" id="publish_now" onclick="send_mqtt_msg()" value="Publish MQTT Message"> -->
-            <hr>
-            <!-- <div id="pubmsg">hhhhhhhhhhh</div> -->
+            <input type="button" class="btn btn-primary" id="publish_now" onclick="send_mqtt_msg()" value="Send Data">
+            <div id="pubmsg"></div>
     <script>
         // Define some MQTT variables
         var mqtt_server = "";
@@ -111,7 +103,7 @@
     .tab-content{
     /* position: center; */
     width: 600px;
-    height: 500px;
+    height: 530px;
     /* margin-top: 70px; */
     /* margin-left: 250px; */
     background: #fff;
@@ -120,6 +112,11 @@
     /* z-index: 1000; */
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.4);
     padding : 30px;
+    margin-top: 20px;
+    }
+    #pubmsg{
+      padding-top: 20px;
+      color: blue;
     }
 
 </style>
