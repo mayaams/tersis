@@ -1,18 +1,69 @@
-<html>
+<!doctype html>
+<html lang="en">
 <head>
 <title>MQTT Publish </title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript"></script>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
 </head>
 <body>
-    <h1>Bandung Weather News (input)</h1>
-    Hostname: <input type="text" id="mqtt_server" value="broker.hivemq.com"><br><br>
-    Port: <input type="text" id="mqtt_port" value="8000"><br><br>
-    Topic: <input type="text" id="mqtt_destname" value="suhuBDG"><br><br>
-    Sensor 1: <input type="tesxt" id="mqtt_msg1" value=""><br><br>
-    Sensor 2: <input type="text" id="mqtt_msg2" value=""><br><br>
-    Sensor 3: <input type="text" id="mqtt_msg3" value=""><br><br>
-
-    <input type="button" id="publish_now" onclick="send_mqtt_msg()" value="Publish MQTT Message">
+    <center>
+    <div class="container">
+        <div class="tab-content grid">
+            <h1>Bandung Weather News (input)</h1>
+            <form>
+                <div class="form-group row">
+                  <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Hostname</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control form-control-sm" id="mqtt_server" value="broker.hivemq.com">
+                  </div>
+                </div>
+                <div class="form-group row">
+                    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Port</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control form-control-sm"  id="mqtt_server" id="mqtt_port" value="8000">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Topic</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control form-control-sm"  id="mqtt_destname" value="suhuBDG">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Sensor 1</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control form-control-sm" id="mqtt_msg1" value="">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Sensor 2</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control form-control-sm" Sensor 2>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Sensor 3</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control form-control-sm" id="mqtt_msg3" value="">
+                    </div>
+                </div>
+              </form>
+            <!-- Hostname: <input type="text" id="mqtt_server" value="broker.hivemq.com"><br><br>
+            Port: <input type="text" id="mqtt_port" value="8000"><br><br>
+            Topic: <input type="text" id="mqtt_destname" value="suhuBDG"><br><br>
+            Sensor 1: <input type="text" id="mqtt_msg1" value=""><br><br>
+            Sensor 2: <input type="text" Sensor 2><br><br>
+            Sensor 3: <input type="text" id="mqtt_msg3" value=""><br><br> -->
+            <input type="button" class="btn btn-primary" id="publish_now" onclick="send_mqtt_msg()" value="Publish MQTT Message">
+            <!-- <input type="button" id="publish_now" onclick="send_mqtt_msg()" value="Publish MQTT Message"> -->
+            <hr>
+            <!-- <div id="pubmsg">hhhhhhhhhhh</div> -->
     <script>
         // Define some MQTT variables
         var mqtt_server = "";
@@ -48,7 +99,27 @@
         // called when a message arrives
 
     </script>
+            </div>
+        </div>
+    </center>
 </body>
-<hr>
-<div id=pubmsg></div>
 </html>
+<style>
+    .container {
+        padding: 5px;
+    }
+    .tab-content{
+    /* position: center; */
+    width: 600px;
+    height: 500px;
+    /* margin-top: 70px; */
+    /* margin-left: 250px; */
+    background: #fff;
+    color: #000;
+    border-radius: 30px;
+    /* z-index: 1000; */
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.4);
+    padding : 30px;
+    }
+
+</style>
